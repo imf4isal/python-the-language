@@ -1,50 +1,16 @@
 import os
+import random
 import re
 
 os.system('cls')
 print('\n\n') 
 
-class Student:
-    def __init__(self, name, house):
-        self.name = name
-        self.house = house
-    
-    def __str__(self):
-        return f"{self.name} from {self.house}"
+class Hat:
+    def __init__(self):
+        self.house = ["Gryffindor", "Ravenclaw", "Slytherin"]
 
-    @property
-    def name(self):
-        return self._name
+    def sort(self, name):
+        print(f"{name} in {random.choice(self.house)}")
 
-    @name.setter
-    def name(self, name):
-        if not name:
-            raise ValueError("Provide a name.")
-        self._name = name
-
-    @property
-    def house(self):
-        return self._house
-    
-    @house.setter
-    def house(self, house):
-        if house not in ["Gryffindor", "Ravenclaw", "Slytherin"]:
-            raise ValueError("House is not valid.")
-        self._house = house
-
-
-
-
-def main():
-    student = get_student()
-    student.house = "Slytherin"
-    print(student)
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()
+hat = Hat()
+hat.sort("Faisal")

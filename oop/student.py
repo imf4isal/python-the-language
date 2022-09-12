@@ -5,11 +5,19 @@ import re
 os.system('cls')
 print('\n\n') 
 
-class Hat:
-    house = ["Gryffindor", "Ravenclaw", "Slytherin"]
+class Student:
+    def __init__(self, name, house):
+        self.name = name
+        self.house = house
+    
+    def __str__(self):
+        return f"{self.name} from {self.house}"
 
     @classmethod
-    def sort(cls, name):
-        print(f"{name} in {random.choice(cls.house)}")
+    def get(cls):
+        name = input("name: ")
+        house = input("house: ")
+        return cls(name, house)
 
-Hat.sort("Faisal")
+student = Student.get()
+print(student)

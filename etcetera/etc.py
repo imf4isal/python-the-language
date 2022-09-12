@@ -4,32 +4,26 @@ from glob import glob
 os.system('cls')
 print('\n\n') 
 
+import mypy
 
-class Account:
-    def __init__(self):
-        self._balance = 0
+
+class Cat:
+    MEOW = 3
+
+    def meow(self):
+        for _ in range(self.MEOW):
+            print("meow")
+
     
-    @property
-    def balance(self):
-        return self._balance
-    
-    def deposit(self, n):
-        self._balance += n
-    
-    def withdraw(self, n):
-        self._balance -= n
 
 
 def main():
-    account = Account()
-    print("Balance:", account.balance)
-    account.deposit(100)
-    account.deposit(100)
-    account.withdraw(50)
-    print("Balance:", account.balance)
+    cat = Cat()
+    cat.meow()
 
 
 
 
 if __name__ == "__main__":
     main()
+

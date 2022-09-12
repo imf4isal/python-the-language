@@ -1,29 +1,27 @@
 import os
+from ast import arguments
 from glob import glob
 
 os.system('cls')
 print('\n\n') 
 
-import mypy
+# import sys
+
+# if len(sys.argv) == 1:
+#     print("meow")
+# elif len(sys.argv) == 3:
+#     n = int(sys.argv[2])
+#     for _ in range(n):
+#         print("meow")
+# else:
+#     print("usage: meows.py [-n NUMBER]")
 
 
-def meow(n: int) -> str:
-    """
-    Meow n times.
+import argparse
 
-    :param n: Number of meow time
-    :type n: int
-    :raise TypeError
-    :return: A string
-    :rtype: str
-    """
-    return "meow\n" * n
+parser = argparse.ArgumentParser(description="Meow like a cat.")
+parser.add_argument("-n",default= 1, help= "number of meow", type=int)
+args = parser.parse_args()
 
-
-
-
-number: int = int(input("How many times you want meow?"))
-
-m: str = meow(number)
-meow(number)
-
+for _ in range(int(args.n)):
+    print("meow")

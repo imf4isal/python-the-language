@@ -6,11 +6,10 @@ os.system('cls')
 print('\n\n') 
 
 class Hat:
-    def __init__(self):
-        self.house = ["Gryffindor", "Ravenclaw", "Slytherin"]
+    house = ["Gryffindor", "Ravenclaw", "Slytherin"]
 
-    def sort(self, name):
-        print(f"{name} in {random.choice(self.house)}")
+    @classmethod
+    def sort(cls, name):
+        print(f"{name} in {random.choice(cls.house)}")
 
-hat = Hat()
-hat.sort("Faisal")
+Hat.sort("Faisal")

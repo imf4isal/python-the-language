@@ -5,19 +5,21 @@ import re
 os.system('cls')
 print('\n\n') 
 
-class Student:
-    def __init__(self, name, house):
+class Wizard:
+    def __init__(self, name):
+        if not name:
+            raise ValueError("Invalid name.")
         self.name = name
+
+
+class Student(Wizard):
+    def __init__(self, name, house):
+        super().__init__(name)
         self.house = house
-    
+
     def __str__(self):
         return f"{self.name} from {self.house}"
 
-    @classmethod
-    def get(cls):
-        name = input("name: ")
-        house = input("house: ")
-        return cls(name, house)
+student = Student("Harry", "Gryffindor")
 
-student = Student.get()
 print(student)

@@ -7,23 +7,23 @@ print('\n\n')
 import mypy
 
 
-class Cat:
-    MEOW = 3
+def meow(n: int) -> str:
+    """
+    Meow n times.
 
-    def meow(self):
-        for _ in range(self.MEOW):
-            print("meow")
-
-    
-
-
-def main():
-    cat = Cat()
-    cat.meow()
+    :param n: Number of meow time
+    :type n: int
+    :raise TypeError
+    :return: A string
+    :rtype: str
+    """
+    return "meow\n" * n
 
 
 
 
-if __name__ == "__main__":
-    main()
+number: int = int(input("How many times you want meow?"))
+
+m: str = meow(number)
+meow(number)
 
